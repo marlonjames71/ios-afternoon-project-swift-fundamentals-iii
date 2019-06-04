@@ -21,28 +21,29 @@ class CurrencyConverterViewController: UIViewController {
 	@IBOutlet var convertButton: UIButton!
 	
 	@IBAction func cadButtonPressed(_ sender: UIButton) {
+		currencyType = .cad
 		cadButton.isSelected.toggle()
 		mxnButton.isSelected = false
 		toCurrencyLabel.text = "Currency (CAD)"
 	}
+	
 	@IBAction func mxnButtonPressed(_ sender: UIButton) {
+		currencyType = .mxn
 		mxnButton.isSelected.toggle()
 		cadButton.isSelected = false
 		toCurrencyLabel.text = "Currency (MXN)"
 	}
 	
-	
 	@IBAction func convertButtonPressed(_ sender: UIButton) {
-		guard let userInput = fromCurrencyTextField.text else {
-			fromCurrencyTextField.text = "Invalid amount entered"
-			return
-		}
+		guard let userInput = fromCurrencyTextField.text else { return }
 		toCurrencyTextField.text = currencyFormatter.string(for: convert(dollars: Double(userInput) ?? 0.0, to: currencyType))
 	}
 	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		toCurrencyLabel.text = "Currency (CAD)"
+		cadButton.isSelected = true
 		view.backgroundColor = UIColor(red: 0.56, green: 0.89, blue: 0.83, alpha: 1)
 		convertButton.backgroundColor = UIColor(red: 0.40, green: 0.22, blue: 0.94, alpha: 1)
 		convertButton.tintColor = UIColor.white
@@ -59,11 +60,13 @@ class CurrencyConverterViewController: UIViewController {
 		case mxn
 	}
 	
+	
 	var currencyFormatter: NumberFormatter = {
 		let formatter = NumberFormatter()
 		formatter.numberStyle = .currency
 		return formatter
 	}()
+	
 	
 	func convert(dollars: Double, to unit: CurrencyType) -> Double {
 		let cad = dollars * 1.34
