@@ -51,7 +51,6 @@ class CurrencyConverterViewController: UIViewController {
 		cadButton.tintColor = UIColor(red: 0.40, green: 0.22, blue: 0.94, alpha: 1)
 		cadButton.isSelected = true
 		mxnButton.tintColor = UIColor(red: 0.40, green: 0.22, blue: 0.94, alpha: 1)
-		
 	}
 
 	
