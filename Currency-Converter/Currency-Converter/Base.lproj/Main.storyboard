@@ -25,11 +25,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="43" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="CAD"/>
+                                        <connections>
+                                            <action selector="cadButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LoC-Di-0MC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFJ-Kk-SOy">
                                         <rect key="frame" x="51" y="0.0" width="47" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="MXN"/>
+                                        <connections>
+                                            <action selector="mxnButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AlN-yd-ore"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

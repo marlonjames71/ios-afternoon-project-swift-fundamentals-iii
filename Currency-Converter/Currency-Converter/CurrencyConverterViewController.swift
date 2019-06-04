@@ -19,6 +19,17 @@ class CurrencyConverterViewController: UIViewController {
 	@IBOutlet var cadButton: UIButton!
 	@IBOutlet var mxnButton: UIButton!
 	@IBOutlet var convertButton: UIButton!
+	
+	@IBAction func cadButtonPressed(_ sender: UIButton) {
+		cadButton.isSelected.toggle()
+		mxnButton.isSelected = false
+	}
+	@IBAction func mxnButtonPressed(_ sender: UIButton) {
+		mxnButton.isSelected.toggle()
+		cadButton.isSelected = false
+	}
+	
+	
 	@IBAction func convertButtonPressed(_ sender: UIButton) {
 		guard let userInput = fromCurrencyTextField.text else {
 			fromCurrencyTextField.text = "Invalid amount entered"
