@@ -23,10 +23,12 @@ class CurrencyConverterViewController: UIViewController {
 	@IBAction func cadButtonPressed(_ sender: UIButton) {
 		cadButton.isSelected.toggle()
 		mxnButton.isSelected = false
+		toCurrencyLabel.text = "Currency (CAD)"
 	}
 	@IBAction func mxnButtonPressed(_ sender: UIButton) {
 		mxnButton.isSelected.toggle()
 		cadButton.isSelected = false
+		toCurrencyLabel.text = "Currency (MXN)"
 	}
 	
 	
@@ -47,6 +49,7 @@ class CurrencyConverterViewController: UIViewController {
 		convertButton.layer.cornerRadius = 18
 		cadButton.tintColor = UIColor(red: 0.40, green: 0.22, blue: 0.94, alpha: 1)
 		cadButton.isSelected = true
+		mxnButton.tintColor = UIColor(red: 0.40, green: 0.22, blue: 0.94, alpha: 1)
 		
 	}
 
